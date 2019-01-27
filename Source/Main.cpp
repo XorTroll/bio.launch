@@ -11,6 +11,9 @@ int main()
     // 'app' module initializes sm and applet services, we initialize as a system applet as we're qlaunch in this case
     bio::app::Initialize(bio::app::RunMode::SystemApplet).AssertOk();
 
+    // By default 'AssertOk' calls exit the code, but we don't want that with qlaunch, so we prefer to throw a fatal in that case.
+    bio::err::SetDefaultThrowMode(bio::err::ThrowMode::Fatal);
+
     // Wait a second to let applet init everything
     bio::svc::SleepThread(1000000000);
 
