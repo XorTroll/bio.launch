@@ -1,2 +1,3 @@
 # bio.launch
-PoC qlaunch replacement, written with Biosphere :)
+
+PoC qlaunch replacement, written with C++ and Biosphere
